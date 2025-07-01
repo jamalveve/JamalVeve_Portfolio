@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Jamal - Personal Portfolio Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="lib/animate/animate.min.css" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .more-projects {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .more-projects.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scrollable-images {
+            display: flex;
+            overflow-x: auto;
+            gap: 1rem;
+            scroll-behavior: smooth;
+            padding-bottom: 0.5rem;
+        }
+
+        .scrollable-images::-webkit-scrollbar {
+            height: 12px;
+        }
+
+        .scrollable-images::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+            border-radius: 2px;
+        }
+
+        .scrollable-images img {
+            max-height: 200px;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        /* blogs */
+        .scroll-container {
+            overflow-x: auto;
+            display: flex;
+            gap: 2rem;
+
+
+            scroll-behavior: smooth;
+            padding-bottom: 1rem;
+        }
+
+        .blog-item-container {
+            flex: 0 0 300px;
+            min-width: 500px;
+        }
+
+        /* Scroll Right Button */
+        .scroll-right-btn {
+            position: absolute;
+            top: 40%;
+            right: 0;
+            transform: translateY(-50%);
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 10;
+            display: none;
+        }
+    </style>
+
+    </style>
+
+    </style>
+
+</head>
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("viewMoreBtn").addEventListener("click", function () {
+            const moreProjects = document.querySelector(".more-projects");
+            moreProjects.style.display = "block";
+            setTimeout(() => {
+                moreProjects.classList.add("show");
+            }, 10);
+            this.style.display = "none"; // Hide the button
+        });
+    });
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const scrollContainer = document.querySelector('.scroll-container');
+        const scrollBtn = document.getElementById('scrollRightBtn');
+        const blogItems = scrollContainer.querySelectorAll('.blog-item-container');
+
+        if (blogItems.length > 4) {
+            scrollBtn.style.display = 'block';
+
+            scrollBtn.addEventListener('click', () => {
+                scrollContainer.scrollBy({
+                    left: 300,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    });
+
+
+
+
+</script>
+
+
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid nav-section border-0">
+        <nav class="navbar navbar-light">
+            <div class="navbar-nav flex-column">
+                <a href="#pigraHome" class="nav-item nav-link active"><span class="fa fa-home"></span> Home</a>
+                <a href="#pigraContact" class="nav-item nav-link"><span class="fas fa-brain"></span> Skills</a>
+                <a href="#pigraAbout" class="nav-item nav-link"><span class="far fa-address-card"></span> Project</a>
+                <a href="#pigraService" class="nav-item nav-link"><span class="fab fa-servicestack"></span> Service</a>
+                <a href="#pigraBlog" class="nav-item nav-link"><span class="fa fa-blog"></span> Blog</a>
+                <a href="#pigraContact" class="nav-item nav-link"><span class="fas fa-address-book"></span> Contact</a>
+
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid" id="pigraHome">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-12 col-lg-3">
+                    <div class="header-content bg-dark h-100 pt-6 pe-6 pb-6">
+                        <a href="index.html" class="navbar-brand d-inline-flex pb-5 wow fadeInUp" data-wow-delay="0.1s">
+                            <h1 class="display-6 text-white mb-0"> 👋 Hello</h1>
+                        </a>
+                        <div class="text-start d-flex flex-column justify-content-center wow fadeInUp"
+                            data-wow-delay="0.3s">
+                            <p class="text-white sub-title">I'm Jamal Veve</p>
+                            <h1 class="display-6 text-white mb-0">Java Spring Boot Developer</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-9">
+                    <div class="header-img d-flex h-100 pt-6 ps-6 pb-6">
+                        <div class="row g-5">
+                            <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="bg-light p-4" style="border-radius: 68% 32% 100% 0% / 0% 75% 25% 100%;">
+                                    <img src="img/header-img.jpeg" class="img-fluid w-100"
+                                        style="border-radius: 68% 32% 100% 0% / 0% 75% 25% 100%;" alt="Image">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.3s">
+                                <h1 class="display-6 mb-4">Full-Stack Engineer | Java & Spring Boot Specialist |
+                                    Building Scalable Web Apps
+                                </h1>
+                                <p class="mb-4">Passionate Full-Stack Developer with expertise in both back-end and
+                                    front-end development. Holding a Bachelor of Engineering in Computer Science, I have
+                                    hands-on experience in building scalable applications using Java, JavaScript, React,
+                                    and Spring Boot. Currently working as a Software Developer in the gaming domain.
+
+                                </p>
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-map-marker-alt text-primary me-3"></i>
+                                    <p class="text-dark mb-0">Tamil Nadu</p>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-envelope text-primary me-3"></i>
+                                    <p class="text-dark mb-0">jamalveve01@gmail.com</p>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fa fa-phone-alt text-primary me-3"></i>
+                                    <p class="text-dark mb-0">91 8940878122</p>
+                                </div>
+                                
+                                <div class="d-flex align-items-center gap-2 flex-wrap">
+                                    <a class="btn btn-primary btn-sm-square"
+                                        href="https://www.linkedin.com/in/jamal-veve/" target="_blank">
+                                        <i class="fab fa-linkedin-in text-white"></i>
+                                    </a>
+                                    <a class="btn btn-info btn-sm-square" href="https://www.naukri.com/mnjuser/homepage"
+                                        target="_blank">
+                                        <i class="fas fa-user-tie text-white"></i>
+                                    </a>
+                                    <a class="btn btn-dark btn-sm-square" href="https://github.com/jamalveve"
+                                        target="_blank">
+                                        <i class="fab fa-github text-white"></i>
+                                    </a>
+                                    <a class="btn btn-primary btn-sm-square" href="https://x.com/home?lang=en"
+                                        target="_blank">
+                                        <i class="fab fa-twitter text-white"></i>
+                                    </a>
+                                    <a class="btn btn-primary btn-sm-square"
+                                        href="https://www.instagram.com/juzz_cache_z/" target="_blank">
+                                        <i class="fab fa-instagram text-white"></i>
+                                    </a>
+                                </div>
+
+
+                            </div>
+                            <a href="lib/Jamal Veve_Resume.pdf" download class="btn btn-primary py-50 px-4">
+                                <i class="fas fa-download me-2"></i>Download My CV
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Education Start -->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-lg-3">
+                    <div class="education-header bg-dark h-100 pt-6 pe-6 pb-6">
+                        <div class="text-start d-flex flex-column justify-content-center wow fadeInUp"
+                            data-wow-delay="0.1s">
+                            <p class="text-white sub-title">Education</p>
+                            <h1 class="display-6 text-white mb-0">My education qualification</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="education-content h-100 pt-6 ps-6 pb-6">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="education-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <p class="fs-5 mb-0 me-4">Info Institute of Engineering</p>
+                                        <div>
+                                            <span class="fa fa-calendar me-1"></span> 2018 - 2022
+                                        </div>
+                                    </div>
+                                    <h4 class="mb-3">BE Computer Science</h4>
+                                    <p class="mb-0">Graduated with a CGPA of 8.56 in Bachelor of Engineering in Computer
+                                        Science.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="education-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <p class="fs-5 mb-0 me-4">ST.Michael Girls School</p>
+                                        <div>
+                                            <span class="fa fa-calendar me-1"></span> 2017 - 2018
+                                        </div>
+                                    </div>
+                                    <h4 class="mb-3">HSC</h4>
+                                    <p class="mb-0">Achieved 85% in Higher Secondary Certificate (HSC) examination.</p>
+
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="education-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <p class="fs-5 mb-0 me-4">ST.Michael Girls School</p>
+                                        <div>
+                                            <span class="fa fa-calendar me-1"></span> 2015 - 2016
+                                        </div>
+                                    </div>
+                                    <h4 class="mb-3">SSLC</h4>
+                                    <p class="mb-0">Achieved 92% in Secondary School Leaving Certificate (SSLC)
+                                        examination.</p>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-12">
+                            <div class="education-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="d-flex align-items-center mb-3">
+                                    <p class="fs-5 mb-0 me-4">Dakshin Bharat Hindi Prachar Sabha</p>
+                                    <div>
+                                        <span class="fa fa-calendar me-1"></span> 2012 - 2017
+                                    </div>
+                                </div>
+                                <h4 class="mb-3">Hindi Rashtrabhasha Certification</h4>
+                                <p class="mb-0">Successfully completed all 8 levels of the Hindi Rashtrabhasha
+                                    examinations conducted by Dakshin Bharat Hindi Prachar Sabha.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Education End -->
+
+    <!-- Experience Start -->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-lg-3">
+                    <div class="experience-header bg-dark h-100 pt-6 pe-6 pb-6">
+                        <div class="text-start d-flex flex-column justify-content-center wow fadeInUp"
+                            data-wow-delay="0.1s">
+                            <p class="text-white sub-title">Experience</p>
+                            <h1 class="display-6 text-white mb-0">My real work experience</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="experience-content h-100 pt-6 ps-6 pb-6">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="row g-4">
+                                    <div class="col-12">
+                                        <div class="experience-item rounded p-4 h-100 wow fadeInUp"
+                                            data-wow-delay="0.1s">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <p class="fs-5 mb-0 me-4">Ivy Comptech</p>
+                                                <div>
+                                                    <span class="fa fa-calendar me-1"></span> 2022 - 2024
+                                                </div>
+                                            </div>
+                                            <h4 class="mb-3">Software Engineer</h4>
+                                            <p class="mb-3">
+                                                Worked as a Software Engineer, contributing to the design, development,
+                                                and maintenance of scalable enterprise solutions.
+                                            </p>
+
+                                            <h5 class="mb-2">Roles & Responsibilities:</h5>
+                                            <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                                                <li>💻 Develop and maintain highly scalable backend systems using Java
+                                                    (Java 8, Java 17).</li>
+                                                <li>🚀 Optimize application performance with ElasticSearch logging.</li>
+                                                <li>🔧 Ensure seamless CI/CD pipelines using Jenkins and Bitbucket.</li>
+                                                <li>🤝 Collaborate in an Agile environment, leveraging Jira for
+                                                    efficient project tracking.</li>
+                                                <li>🪵 Debug and analyze logs using Kibana to ensure optimal system
+                                                    performance.</li>
+                                                <li>🎨 Deliver front-end enhancements using modern tools and frameworks.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- Exparience End -->
+
+
+    <!-- Skills Start -->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-lg-3">
+                    <div class="skills-header bg-dark h-100 pt-6 pe-6 pb-6">
+                        <div class="text-start d-flex flex-column justify-content-center wow fadeInUp"
+                            data-wow-delay="0.1s">
+                            <p class="text-white sub-title">Skills</p>
+                            <h1 class="display-6 text-white mb-0">What I bring to the table</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="skills-content h-100 pt-6 ps-6 pb-6">
+                        <!-- Tabs -->
+                        <ul class="nav nav-pills mb-4" id="skillsTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#allSkills"
+                                    type="button">All</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#frontend"
+                                    type="button">Frontend</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#backend"
+                                    type="button">Backend</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tools"
+                                    type="button">Tools</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#softskills"
+                                    type="button">Skills</button>
+                            </li>
+                        </ul>
+
+                        <!-- Tab Content -->
+
+                        <div class="tab-content" id="skillsTabContent">
+                            <!-- All Skills Tab -->
+
+
+                            <div class="tab-pane fade show active" id="allSkills">
+                                <div class="row g-4">
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fab fa-html5 fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">HTML</h4>
+                                            <p class="text-muted mb-0">95%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fab fa-css3-alt fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">CSS</h4>
+                                            <p class="text-muted mb-0">95%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-code fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Tailwind CSS</h4>
+                                            <p class="text-muted mb-0">80%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fab fa-js-square fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">JavaScript</h4>
+                                            <p class="text-muted mb-0">70%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fab fa-react fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">React JS</h4>
+                                            <p class="text-muted mb-0">50%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fab fa-java fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Java</h4>
+                                            <p class="text-muted mb-0">90%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-leaf fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Spring Boot</h4>
+                                            <p class="text-muted mb-0">80%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-database fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">SQL</h4>
+                                            <p class="text-muted mb-0">75%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-database fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">MongoDB</h4>
+                                            <p class="text-muted mb-0">30%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fab fa-git-alt fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Git</h4>
+                                            <p class="text-muted mb-0">90%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-code-branch fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Jenkins</h4>
+                                            <p class="text-muted mb-0">80%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-vial fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Postman</h4>
+                                            <p class="text-muted mb-0">70%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-tasks fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Jira</h4>
+                                            <p class="text-muted mb-0">80%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-search fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Fortify</h4>
+                                            <p class="text-muted mb-0">50%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-search-plus fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">ElasticSearch</h4>
+                                            <p class="text-muted mb-0">80%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-code fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">VS Code</h4>
+                                            <p class="text-muted mb-0">90%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-terminal fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Eclipse</h4>
+                                            <p class="text-muted mb-0">90%</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- Backend Skills -->
+                            <div class="tab-pane fade" id="backend">
+                                <div class="row g-4">
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fab fa-java fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Java</h4>
+                                            <p class="text-muted mb-0">90%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-leaf fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Spring Boot</h4>
+                                            <p class="text-muted mb-0">80%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-database fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">SQL</h4>
+                                            <p class="text-muted mb-0">75%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-database fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">MongoDB</h4>
+                                            <p class="text-muted mb-0">30%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-comments fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Collaboration</h4>
+                                            <p class="text-muted mb-0">95%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-lightbulb fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Problem Solving</h4>
+                                            <p class="text-muted mb-0">90%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="frontend">
+                                <div class="row g-4">
+                                    <!-- Frontend Skills -->
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fab fa-html5 fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">HTML</h4>
+                                            <p class="text-muted mb-0">95%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fab fa-css3-alt fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">CSS</h4>
+                                            <p class="text-muted mb-0">95%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-code fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Tailwind CSS</h4>
+                                            <p class="text-muted mb-0">80%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fab fa-js-square fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">JavaScript</h4>
+                                            <p class="text-muted mb-0">70%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fab fa-react fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">React JS</h4>
+                                            <p class="text-muted mb-0">50%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Backend Skills -->
+                            <div class="tab-pane fade" id="backend">
+                                <div class="row g-4">
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fab fa-java fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Java</h4>
+                                            <p class="text-muted mb-0">90%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-leaf fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Spring Boot</h4>
+                                            <p class="text-muted mb-0">80%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-database fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">SQL</h4>
+                                            <p class="text-muted mb-0">75%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-database fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">MongoDB</h4>
+                                            <p class="text-muted mb-0">30%</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- Tools Skills -->
+                            <div class="tab-pane fade" id="tools">
+                                <div class="row g-4">
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fab fa-git-alt fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Git</h4>
+                                            <p class="text-muted mb-0">90%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-code-branch fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Jenkins</h4>
+                                            <p class="text-muted mb-0">80%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-vial fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Postman</h4>
+                                            <p class="text-muted mb-0">70%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-tasks fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Jira</h4>
+                                            <p class="text-muted mb-0">80%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-search fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Fortify</h4>
+                                            <p class="text-muted mb-0">50%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-search-plus fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">ElasticSearch</h4>
+                                            <p class="text-muted mb-0">80%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-code fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">VS Code</h4>
+                                            <p class="text-muted mb-0">90%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-terminal fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Eclipse</h4>
+                                            <p class="text-muted mb-0">90%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Soft Skills -->
+                            <div class="tab-pane fade" id="softskills">
+                                <div class="row g-4">
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-comments fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Collaboration</h4>
+                                            <p class="text-muted mb-0">95%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-xl-3">
+                                        <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp">
+                                            <div class="text-primary text-center mb-3">
+                                                <i class="fas fa-lightbulb fa-3x"></i>
+                                            </div>
+                                            <h4 class="mb-1">Problem Solving</h4>
+                                            <p class="text-muted mb-0">90%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- End of Tab Content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Skills End -->
+
+
+
+
+
+    <!-- Portfolio Start -->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-lg-3">
+                    <div class="portfolio-header h-100 bg-dark pt-6 pe-6 pb-6">
+                        <div class="text-start d-flex flex-column justify-content-center wow fadeInUp"
+                            data-wow-delay="0.1s">
+                            <p class="text-white sub-title">Portfolio</p>
+                            <h1 class="display-6 text-white mb-0">My Recent Projects</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="portfolio-content h-100 pt-6 ps-6 pb-6">
+                        <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="row g-4 align-items-center">
+                                <div class="col-xl-6">
+                                    <h4 class="text-body">E‑Commer
+                                        ce App</h4>
+                                    <h1 class="display-6 mb-0">Rive Naturals Full‑Stack Platform <span
+                                            class="text-muted" style="font-size: 1rem;">(Apr 2024)</span></h1>
+                                </div>
+                                <div class="col-11 col-xl-6">
+                                    <div class="scrollable-images">
+                                        <img src="img/rive_image1.png" alt="Image 1" />
+                                        <img src="img/rive_image2.png" alt="Image 2" />
+                                        <img src="img/rive_image3.png" alt="Image 3" />
+                                        <img src="img/rive_image4.png" alt="Image 3" />
+
+
+                                        <!-- Add more images here -->
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="row g-4 align-items-center">
+                                <div class="col-xl-6">
+                                    <h4 class="text-body">Web Development</h4>
+                                    <h1 class="display-6 mb-0">Personal Portfolio (React &amp; Tailwind)<span
+                                            class="text-muted" style="font-size: 1rem;">(Apr 2024)</span></h1>
+                                </div>
+                                <div class="col-11 col-xl-6">
+                                    <div class="scrollable-images">
+                                        <img src="img/portfolio_img1.png" alt="Image 1" />
+                                        <img src="img/portfolio_img2.png" alt="Image 2" />
+                                        <img src="img/portfolio_img3.png" alt="Image 3" />
+                                        <img src="img/portfolio_img4.png" alt="Image 3" />
+
+                                        <!-- Add more images here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="0.9s">
+                            <div class="row g-4 align-items-center">
+                                <div class="col-xl-6">
+                                    <h4 class="text-body">Full-Stack in the Browser</h4>
+                                    <h1 class="display-6 mb-0">Patient Registration App (React + PGlite)<span
+                                            class="text-muted" style="font-size: 1rem;">(Apr 2024)</span></h1>
+                                    <ul class="mt-3 mb-0 text-muted small">
+                                        <li>📝 Multi-step registration with data persistence</li>
+                                        <li>🔐 Auth + Protected Routes</li>
+                                        <li>🧪 In-browser SQL Query Panel</li>
+                                        <li>📱 Tailwind CSS Responsive UI</li>
+                                        <li>🗃️ PGlite (IndexedDB) for local database</li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-11 col-xl-6">
+                                    <div class="scrollable-images">
+                                        <img src="img/patient_reg_1.png" alt="Image 1" />
+                                        <img src="img/patient_reg_2.png" alt="Image 2" />
+                                        <img src="img/patient_reg_3.png" alt="Image 3" />
+                                        <img src="img/patient_reg_4.png" alt="Image 3" />
+
+                                        <!-- Add more images here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="1s">
+                            <div class="row g-4 align-items-center">
+                                <div class="col-xl-6">
+                                    <h4 class="text-body">Backend Development</h4>
+                                    <h1 class="display-6 mb-0">Betting Market Processing Service<span class="text-muted"
+                                            style="font-size: 1rem;">(Apr 2024)</span></h1>
+                                    <ul class="mt-3 mb-0 text-muted small">
+                                        <li>✅ Developed scalable market templates using Java 8 & 17</li>
+                                        <li>✅ Implemented JUnit 5 test cases to ensure reliability</li>
+                                        <li>✅ Agile-driven delivery aligned with Jira sprint specs</li>
+                                        <li>✅ Integrated CI/CD pipelines with Jenkins</li>
+                                        <li>✅ Used Kibana & ElasticSearch for real-time debugging</li>
+                                        <li>✅ Collaborated with UAT teams to refine business logic</li>
+                                    </ul>
+                                </div>
+                                <div class="col-11 col-xl-6">
+                                    <div class="scrollable-images">
+                                        <img src="img/sports.jpg" alt="Image 1" />
+
+                                        <!-- Add more images here -->
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="more-projects">
+
+                            <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="1.1s">
+                                <div class="row g-4 align-items-center">
+                                    <div class="col-xl-6">
+                                        <h4 class="text-body">Full-Stack Development</h4>
+                                        <h1 class="display-6 mb-0">Virtual Football Betting Platform<span
+                                                class="text-muted" style="font-size: 1rem;">(Apr 2024)</span></h1>
+                                        <ul class="mt-3 mb-0 text-muted small">
+                                            <li>✅ Built responsive UI using React for placing bets on live virtual
+                                                football
+                                                matches</li>
+                                            <li>✅ Designed reusable components to support multiple betting markets</li>
+                                            <li>✅ Developed backend market processing services in Java (Java 8/17)</li>
+                                            <li>✅ Followed SOLID principles & design patterns for scalable architecture
+                                            </li>
+                                            <li>✅ Wrote unit tests using JUnit 5 for reliable market logic</li>
+                                            <li>✅ Used Kibana & ElasticSearch for real-time debugging & monitoring</li>
+                                            <li>✅ Delivered features in Agile sprints aligned with Jira workflows</li>
+                                            <li>✅ Integrated with Jenkins pipelines and participated in UAT cycles</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-11 col-xl-6">
+                                        <div class="scrollable-images">
+                                            <img src="img/sport_betting.jpeg" alt="Image 1" />
+
+                                            <!-- Add more images here -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="1.2s">
+                                <div class="row g-4 align-items-center">
+                                    <!-- LEFT: Text Content -->
+                                    <div class="col-xl-6">
+                                        <h4 class="text-body">Frontend Game Development</h4>
+                                        <h1 class="display-6 mb-0">My Own Tic-Tac-Toe Game! 🎮
+                                            <span class="text-muted" style="font-size: 1rem;">(2024)</span>
+                                        </h1>
+                                        <ul class="mt-3 mb-0 text-muted small">
+                                            <li>✅ Interactive 2-player gameplay</li>
+                                            <li>✅ Dynamic UI with winning/tie logic</li>
+                                            <li>✅ Built using React, Tailwind CSS & JavaScript</li>
+                                            <li>✅ Clean component structure</li>
+                                            <li>✅ Smooth UX with restart & status updates</li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- RIGHT: Scrollable Images -->
+                                    <div class="col-12 col-xl-6">
+                                        <div class="scrollable-images">
+                                            <img src="img/Tic_Tac_Toe.jpg" alt="Tic Tac Toe UI 1" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="1.2s">
+                                <div class="row g-4 align-items-center">
+                                    <div class="col-xl-6">
+                                        <h4 class="text-body">Web App – Flex Printing</h4>
+                                        <h1 class="display-6 mb-0">Online Flex Printing Platform<span class="text-muted"
+                                                style="font-size: 1rem;">(Apr 2024)</span></h1>
+                                        <ul class="mt-3 mb-0 text-muted small">
+                                            <li>✅ Built responsive frontend using HTML, CSS, Tailwind & JavaScript</li>
+                                            <li>✅ Developed dynamic UI for design customization & ordering</li>
+                                            <li>✅ Integrated SQL-based database for storing orders & selections</li>
+                                            <li>✅ Ensured seamless UX across mobile & desktop devices</li>
+                                            <li>✅ Handled full deployment & hosting for live access</li>
+                                            <li>✅ Collaborated with backend team for smoother order workflows</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-11 col-xl-6">
+                                        <div class="scrollable-images">
+                                            <img src="img/DIFP_image1.png" alt="Image 1" />
+                                            <img src="img/DIFP_image2.png" alt="Image 1" />
+                                            <img src="img/DIFP_image3.png" alt="Image 1" />
+                                            <img src="img/DIFP_image4.png" alt="Image 1" />
+
+                                            <!-- Add more images here -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="1.3s">
+                                <div class="row g-4 align-items-center">
+                                    <div class="col-xl-6">
+                                        <h4 class="text-body">Order Fulfillment System</h4>
+                                        <h1 class="display-6 mb-0">Pick and Pack – Streamlined Logistics UI<span
+                                                class="text-muted" style="font-size: 1rem;">(Apr 2024)</span></h1>
+                                        <ul class="mt-3 mb-0 text-muted small">
+                                            <li>✅ Developed responsive frontend using HTML, CSS, Bootstrap, and Figma
+                                            </li>
+                                            <li>✅ Structured user flows for seamless product selection & packaging</li>
+                                            <li>✅ Integrated SQL-based backend for order tracking and status updates
+                                            </li>
+                                            <li>✅ Designed interactive prototypes using Figma for user-centric workflows
+                                            </li>
+                                            <li>✅ Enhanced UX with Bootstrap components and consistent visual hierarchy
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-11 col-xl-6">
+                                        <div class="scrollable-images">
+                                            <img src="img/pick and pack.webp" alt="Image 1" />
+
+                                            <img src="img/pick and pack2.jpg" alt="Image 1" />
+
+
+                                            <!-- Add more images here -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="1.4s">
+                                <div class="row g-4 align-items-center">
+                                    <div class="col-xl-6">
+                                        <h4 class="text-body">Portfolio Website</h4>
+                                        <h1 class="display-6 mb-0">Dream Holders – Personal Branding Site <span
+                                                class="text-muted" style="font-size: 1rem;">(Apr 2024)</span></h1>
+                                        <ul class="mt-3 mb-0 text-muted small">
+                                            <li>✅ Designed a modern, clean UI to showcase creative projects</li>
+                                            <li>✅ Built fully responsive layout with smooth scrolling & section
+                                                transitions
+                                            </li>
+                                            <li>✅ Included dedicated sections: Home, About, Portfolio, Contact</li>
+                                            <li>✅ Optimized for mobile and desktop using Bootstrap components</li>
+                                            <li>✅ Structured portfolio gallery for dynamic project highlighting</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-11 col-xl-6">
+                                        <div class="scrollable-images">
+                                            <img src="img/DH_image1.png" alt="Image 1" />
+                                            <img src="img/DH_image2.png " alt="Image 2" />
+                                            <img src="img/DH_image3.png " alt="Image 3" />
+                                            <img src="img/DH_image4.png " alt="Image 3" />
+
+                                            <!-- Add more images here -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- View More Button -->
+                        <div class="text-center mt-4">
+                            <button id="viewMoreBtn" class="btn btn-primary px-4 py-2">View More Projects</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio End -->
+
+
+    <!-- Blog Start -->
+    <div class="container-fluid" id="pigraBlog">
+        <div class="container">
+            <div class="row g-0">
+                <!-- Blog Sidebar Header -->
+                <div class="col-lg-3">
+                    <div class="blog-header h-100 bg-dark pt-6 pe-6 pb-6">
+                        <div class="text-start d-flex flex-column justify-content-center wow fadeInUp"
+                            data-wow-delay="0.1s">
+                            <p class="text-white sub-title">Blog</p>
+                            <h1 class="display-6 text-white mb-0">Recent Articles</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Content -->
+                <div class="col-lg-9 position-relative">
+                    <div class="blog-content h-100 pt-6 ps-6 pb-6">
+                        <div class="scroll-container d-flex">
+
+
+
+                            <!-- Blog Item 1 -->
+                            <div class="blog-item-container">
+
+                                <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="row g-4">
+                                        <div class="col-4">
+                                            <div class="blog-item-img bg-dark h-100">
+                                                <a href="#">
+                                                    <img src="img/layoff.webp" class="img-fluid w-100 h-100"
+                                                        style="object-fit: cover;" alt="Image">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="h-100">
+                                                <p class="text-body mb-3">
+                                                    <i class="fa fa-calendar-alt me-2"></i> June 5, 2025
+                                                </p>
+                                                <a href="https://www.linkedin.com/pulse/ibms-ai-driven-layoffs-turning-point-future-work-jamal-veve-7xpsc"
+                                                    class="d-inline-block h4 mb-4">AI-Driven Layoffs: A Turning
+                                                    Point
+                                                    for the Future of Work</a>
+                                                <div class="py-2 px-3 bg-light d-flex justify-content-between">
+                                                    <p class="mb-0 text-body"><i class="fa fa-clock me-1"></i> 5
+                                                        min
+                                                        read</p>
+                                                    <p class="mb-0 text-body">Category: <strong>Future</strong>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- Blog Item 2 -->
+                            <div class="blog-item-container">
+
+
+                                <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="row g-4">
+                                        <div class="col-4">
+                                            <div class="blog-item-img bg-dark h-100">
+                                                <a href="#">
+                                                    <img src="img/reka.png" class="img-fluid w-100 h-100"
+                                                        style="object-fit: cover;" alt="Image">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="h-100">
+                                                <p class="text-body mb-3">
+                                                    <i class="fa fa-calendar-alt me-2"></i>June 20, 2025
+                                                </p>
+                                                <a href="https://www.linkedin.com/pulse/reka-ais-latest-update-redefining-boundaries-enterprise-jamal-veve-dui5e"
+                                                    class="d-inline-block h4 mb-4">Reka AI’s Latest Update:
+                                                    Redefining
+                                                    the Boundaries of Enterprise AI</a>
+                                                <div class="py-2 px-3 bg-light d-flex justify-content-between">
+                                                    <p class="mb-0 text-body"><i class="fa fa-clock me-1"></i> 4
+                                                        min
+                                                        read</p>
+                                                    <p class="mb-0 text-body">Category: <strong>AI &
+                                                            Tech</strong></p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Blog Item 3 -->
+                            <div class="blog-item-container">
+
+
+                                <div class="blog-item wow fadeInUp" data-wow-delay="0.5s">
+                                    <div class="row g-4">
+                                        <div class="col-4">
+                                            <div class="blog-item-img bg-dark h-100">
+                                                <a href="#">
+                                                    <img src="img/sql_ai.webp" class="img-fluid w-100 h-100"
+                                                        style="object-fit: cover;" alt="Image">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="h-100">
+                                                <p class="text-body mb-3">
+                                                    <i class="fa fa-calendar-alt me-2"></i> june 1, 2025
+                                                </p>
+                                                <a href="https://www.linkedin.com/posts/jamal-veve_sqlusingai-day1-mysql-activity-7336368203394162689-CjN5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFF574EB3oQC_Ndywy02V68UDUZrTqJFvoM"
+                                                    class="d-inline-block h4 mb-4">Tutorials for SQL using
+                                                    AI</a>
+                                                <div class="py-2 px-3 bg-light d-flex justify-content-between">
+                                                    <p class="mb-0 text-body">
+                                                        <i class="fa fa-play-circle me-1"></i> 2 min video
+                                                    </p>
+
+
+                                                    <p class="mb-0 text-body">In <a href="#" class="h6">AI vs
+                                                            SQL</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- Blog Item 4 -->
+                            <div class="blog-item-container">
+
+                                <div class="blog-item wow fadeInUp" data-wow-delay="0.7s">
+                                    <div class="row g-4">
+                                        <div class="col-4">
+                                            <div class="blog-item-img bg-dark h-100">
+                                                <a href="#">
+                                                    <img src="img/Eda_ai.jpg" class="img-fluid w-100 h-100"
+                                                        style="object-fit: cover;" alt="Image">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="h-100">
+                                                <p class="text-body mb-3">
+                                                    <i class="fa fa-calendar-alt me-2"></i> july 8, 2025
+                                                </p>
+                                                <a href="https://www.linkedin.com/posts/jamal-veve_featureengineering-datascience-mltips-activity-7342819100525531136-gkoO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFF574EB3oQC_Ndywy02V68UDUZrTqJFvoM"
+                                                    class="d-inline-block h4 mb-4">Learning EDA using Copilot
+                                                </a>
+                                                <div class="py-2 px-3 bg-light d-flex justify-content-between">
+                                                    <p class="mb-0 text-body">
+                                                        <i class="fa fa-play-circle me-1"></i> 2 min video
+                                                    </p>
+
+                                                    <p class="mb-0 text-body">In <a href="#" class="h6">Data
+                                                            Analytics</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- Blog Item 5 -->
+                            <!-- <div class="blog-item-container">
+
+                                <div class="blog-item wow fadeInUp" data-wow-delay="0.7s">
+                                    <div class="row g-4">
+                                        <div class="col-4">
+                                            <div class="blog-item-img bg-dark h-100">
+                                                <a href="#">
+                                                    <img src="img/blog-4.jpg" class="img-fluid w-100 h-100"
+                                                        style="object-fit: cover;" alt="Image">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="h-100">
+                                                <p class="text-body mb-3">
+                                                    <i class="fa fa-calendar-alt me-2"></i> july 8, 2025
+                                                </p>
+                                                <a href="https://www.linkedin.com/posts/jamal-veve_featureengineering-datascience-mltips-activity-7342819100525531136-gkoO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFF574EB3oQC_Ndywy02V68UDUZrTqJFvoM"
+                                                    class="d-inline-block h4 mb-4">Learning EDA using
+                                                    Copilot
+                                                </a>
+                                                <div class="py-2 px-3 bg-light d-flex justify-content-between">
+                                                    <p class="mb-0 text-body">
+                                                        <i class="fa fa-play-circle me-1"></i> 2 min video
+                                                    </p>
+
+                                                    <p class="mb-0 text-body">In <a href="#" class="h6">Data
+                                                            Analytics</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div> -->
+
+                            <!-- Scroll Right Button -->
+                            <!-- <button class="scroll-right-btn">
+                                &gt;
+                            </button>
+
+                            View More Button
+                            <div class="col-12 mt-4">
+                                <div class="blog-btn d-flex justify-content-center">
+                                    <p class="mb-0 me-2">For More Works Visit</p>
+                                    <a href="https://www.linkedin.com/in/jamal-veve" class="btn d-inline-block p-0"
+                                        target="_blank">my blogs</a>
+                                </div>
+                            </div> -->
+
+                        </div> <!-- scrill cotainer- -->
+                    </div> <!-- blog-content -->
+                </div> <!-- col-lg-9 -->
+            </div> <!-- row g-0 -->
+        </div> <!-- container -->
+    </div> <!-- container-fluid -->
+
+
+    <!-- Blog End -->
+
+
+    <!-- Testimonial Start -->
+    <!-- <div class="container-fluid">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-lg-3">
+                    <div class="testimonial-header h-100 bg-dark pt-6 pe-6 pb-6">
+                        <div class="text-start d-flex flex-column justify-content-center wow fadeInUp"
+                            data-wow-delay="0.1s">
+                            <p class="text-white sub-title">Testimonial</p>
+                            <h1 class="display-6 text-white mb-0">What People Say</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="testimonial-content h-100 pt-6 ps-6 pb-6">
+                        <div class="testimonial-carousel owl-carousel bg-light wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="testimonial-item"
+                                data-dot="<img class='img-fluid' src='img/testimonial-img-1.jpg' alt=''>">
+                                <div class="row gy-4 gx-2 mb-4">
+                                    <div class="col-sm-6">
+                                        <div class="d-flex justify-content-sm-end">
+                                            <div class="testimonial-inner-img border border-primary border-3 me-4"
+                                                style="width: 100px; height: 100px;">
+                                                <img src="img/testimonial-img-1.jpg" class="img-fluid"
+                                                    style="object-fit: cover;" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div>
+                                            <h5 class="mb-2">John Abraham</h5>
+                                            <p class="mb-0">New York, USA</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-sm-center">
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores nemo facilis
+                                        tempora esse explicabo sed! Dignissimos quia ullam pariatur blanditiis sed
+                                        voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
+                                    </p>
+                                    <div class="d-flex justify-content-sm-center">
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-item"
+                                data-dot="<img class='img-fluid' src='img/testimonial-img-2.jpg' alt=''>">
+                                <div class="row gy-4 gx-2 mb-4">
+                                    <div class="col-sm-6">
+                                        <div class="d-flex justify-content-sm-end">
+                                            <div class="testimonial-inner-img border border-primary border-3 me-4"
+                                                style="width: 100px; height: 100px;">
+                                                <img src="img/testimonial-img-2.jpg" class="img-fluid"
+                                                    style="object-fit: cover;" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div>
+                                            <h5 class="mb-2">John Abraham</h5>
+                                            <p class="mb-0">New York, USA</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-sm-center">
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores nemo facilis
+                                        tempora esse explicabo sed! Dignissimos quia ullam pariatur blanditiis sed
+                                        voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
+                                    </p>
+                                    <div class="d-flex justify-content-sm-center">
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-item"
+                                data-dot="<img class='img-fluid' src='img/testimonial-img-3.jpg' alt=''>">
+                                <div class="row gy-4 gx-2 mb-4">
+                                    <div class="col-sm-6">
+                                        <div class="d-flex justify-content-sm-end">
+                                            <div class="testimonial-inner-img border border-primary border-3 me-4"
+                                                style="width: 100px; height: 100px;">
+                                                <img src="img/testimonial-img-3.jpg" class="img-fluid"
+                                                    style="object-fit: cover;" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div>
+                                            <h5 class="mb-2">John Abraham</h5>
+                                            <p class="mb-0">New York, USA</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-sm-center">
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores nemo facilis
+                                        tempora esse explicabo sed! Dignissimos quia ullam pariatur blanditiis sed
+                                        voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
+                                    </p>
+                                    <div class="d-flex justify-content-sm-center">
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                        <i class="fas fa-star text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Testimonial End -->
+
+
+    <!-- Service Start -->
+    <div class="container-fluid" id="pigraService">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-lg-3">
+                    <div class="service-header h-100 bg-dark pt-6 pe-6 pb-6">
+                        <div class="text-start d-flex flex-column justify-content-center wow fadeInUp"
+                            data-wow-delay="0.1s">
+                            <p class="text-white sub-title">My Services</p>
+                            <h1 class="display-6 text-white mb-0">What I do for you</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="service-content h-100 pt-6 ps-6 pb-6">
+                        <div class="row g-4">
+                            <!-- Web Development -->
+                            <div class="col-12">
+                                <div class="service-item p-4 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-xl-2">
+                                            <i class="fas fa-code fa-3x"></i>
+                                        </div>
+                                        <div class="col-xl-3">
+                                            <a href="#" class="h4 mb-0">Web Development</a>
+                                        </div>
+                                        <div class="col-xl-4">
+                                            <p class="mb-0">Building fast, responsive websites using modern tech
+                                                like
+                                                HTML, CSS, JS, and Tailwind.</p>
+                                        </div>
+                                        <div class="col-xl-3">
+                                            <p><i class="fa fa-check me-2"></i>Responsive Design</p>
+                                            <p><i class="fa fa-check me-2"></i>SEO Optimization</p>
+                                            <p class="mb-0"><i class="fa fa-check me-2"></i>Performance Focused
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Full Stack Development -->
+                            <div class="col-12">
+                                <div class="service-item p-4 wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-xl-2">
+                                            <i class="fas fa-layer-group fa-3x"></i>
+                                        </div>
+                                        <div class="col-xl-3">
+                                            <a href="#" class="h4 mb-0">Full Stack Development</a>
+                                        </div>
+                                        <div class="col-xl-4">
+                                            <p class="mb-0">End-to-end application development from frontend to
+                                                backend
+                                                using React, Java, Spring Boot, and MongoDB.</p>
+                                        </div>
+                                        <div class="col-xl-3">
+                                            <p><i class="fa fa-check me-2"></i>React + Java + DB</p>
+                                            <p><i class="fa fa-check me-2"></i>REST APIs</p>
+                                            <p class="mb-0"><i class="fa fa-check me-2"></i>Deployment Ready</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Mastering AI -->
+                            <div class="col-12">
+                                <div class="service-item p-4 wow fadeInUp" data-wow-delay="0.5s">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-xl-2">
+                                            <i class="fas fa-robot fa-3x"></i>
+                                        </div>
+                                        <div class="col-xl-3">
+                                            <a href="#" class="h4 mb-0">Mastering AI</a>
+                                        </div>
+                                        <div class="col-xl-4">
+                                            <p class="mb-0">Exploring AI/ML concepts and integrating intelligent
+                                                features into web applications using Python and APIs.</p>
+                                        </div>
+                                        <div class="col-xl-3">
+                                            <p><i class="fa fa-check me-2"></i>Python + ML</p>
+                                            <p><i class="fa fa-check me-2"></i>AI Tools</p>
+                                            <p class="mb-0"><i class="fa fa-check me-2"></i>Prompt Engieering</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- Contact Start -->
+    <div class="container-fluid" id="pigraContact">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-lg-3">
+                    <div class="contact-header h-100 bg-dark pt-6 pe-6 pb-6">
+                        <div class="text-start d-flex flex-column justify-content-center wow fadeInUp"
+                            data-wow-delay="0.1s">
+                            <p class="text-white sub-title">Contact Me</p>
+                            <h1 class="display-6 text-white mb-0">Let’s Start A New Project</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="contact-content h-100 pt-6 ps-6 pb-6">
+                        <div class="bg-light p-4">
+                            <div class="row g-5">
+                                <div class="col-xl-5 wow fadeInUp" data-wow-delay="0.1s">
+
+                                    <div class="d-flex mb-4">
+                                        <div class="btn-xl-square bg-primary text-white me-3">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div>
+                                            <h4>Connect With me</h4>
+                                            <p class="mb-0">jamalveve01@gmail.com</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 wow fadeInUp" data-wow-delay="0.5s">
+                                        <div class="rounded">
+                                            <iframe class="rounded w-100" style="height: 350px;"
+                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd"
+                                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                                <div class="col-xl-7 wow fadeInUp" data-wow-delay="0.3s">
+                                    <div>
+                                        <form>
+                                            <div class="row g-3">
+                                                <div class="col-lg-12 col-xl-6">
+                                                    <div class="form-floating">
+                                                        <input type="text" class="form-control border-0" id="name"
+                                                            placeholder="Your Name">
+                                                        <label for="name">Your Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-xl-6">
+                                                    <div class="form-floating">
+                                                        <input type="email" class="form-control border-0" id="email"
+                                                            placeholder="Your Email">
+                                                        <label for="email">Your Email</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12 col-xl-6">
+                                                    <div class="form-floating">
+                                                        <input type="email" class="form-control border-0" id="email"
+                                                            placeholder="Your Email">
+                                                        <label for="email">Your Project</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-xl-6">
+                                                    <div class="form-floating">
+                                                        <input type="phone" class="form-control border-0" id="phone"
+                                                            placeholder="Phone">
+                                                        <label for="phone">Your Phone</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <div class="form-floating">
+                                                        <input type="text" class="form-control border-0" id="subject"
+                                                            placeholder="Subject">
+                                                        <label for="subject">Subject</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-floating">
+                                                        <textarea class="form-control border-0"
+                                                            placeholder="Leave a message here" id="message"
+                                                            style="height: 120px"></textarea>
+                                                        <label for="message">Message</label>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-12">
+                                                    <button class="btn btn-primary w-100 py-3">Send
+                                                        Message</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer bg-dark border-bottom-0">
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="row g-0">
+                <div class="col-12">
+                    <div class="footer-content h-100 pt-6 ps-6 pb-6">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-12 text-center">
+                                <div class="d-flex justify-content-center align-items-center flex-wrap gap-2 mt-3">
+                                    <a class="btn btn-primary btn-sm-square"
+                                        href="https://www.linkedin.com/in/jamal-veve/" target="_blank">
+                                        <i class="fab fa-linkedin-in text-white"></i>
+                                    </a>
+                                    <a class="btn btn-info btn-sm-square" href="https://www.naukri.com/mnjuser/homepage"
+                                        target="_blank">
+                                        <i class="fas fa-user-tie text-white"></i>
+                                    </a>
+                                    <a class="btn btn-dark btn-sm-square" href="https://github.com/jamalveve"
+                                        target="_blank">
+                                        <i class="fab fa-github text-white"></i>
+                                    </a>
+                                    <a class="btn btn-primary btn-sm-square" href="https://x.com/home?lang=en"
+                                        target="_blank">
+                                        <i class="fab fa-twitter text-white"></i>
+                                    </a>
+                                    <a class="btn btn-danger btn-sm-square"
+                                        href="https://www.instagram.com/juzz_cache_z/" target="_blank">
+                                        <i class="fab fa-instagram text-white"></i>
+                                    </a>
+                                </div>
+
+
+
+                            </div>
+                            <div class="col-12 text-center">
+                                <span class="text-body"><a href="#" class="border-bottom text-white"><i
+                                            class="fas fa-copyright text-body me-2"></i>Jamy portfolio</a>, All
+                                    right
+                                    reserved.</span>
+                            </div>
+                            <div class="col-12 text-center text-body">
+                                <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                                <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                                <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
