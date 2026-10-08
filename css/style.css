@@ -510,3 +510,105 @@
 
 
 
+/* =========================
+   Certificates Section
+   ========================= */
+/* =========================
+   Certificates
+   ========================= */
+
+.certificates-scroll {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 10px 5px 20px;
+
+    /* Hide scrollbar on Firefox */
+    scrollbar-width: none;
+}
+
+/* Hide scrollbar on Chrome, Edge, Safari */
+.certificates-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Each certificate */
+.certificate-card {
+    flex: 0 0 calc(50% - 12.5px);
+    min-width: calc(50% - 12.5px);
+
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    scroll-snap-align: start;
+
+    transition: all 0.3s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Certificate content */
+.certificate-info {
+    padding: 25px;
+    min-height: 220px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* Certificate title */
+.certificate-info h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+
+/* Certificate provider */
+.certificate-info p {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+
+/* Button */
+.certificate-btn {
+    width: fit-content;
+    font-size: 0.9rem;
+}
+
+
+/* Mobile */
+@media (max-width: 767px) {
+
+    .certificate-card {
+        flex: 0 0 100%;
+        min-width: 100%;
+    }
+
+    .certificate-info {
+        min-height: 200px;
+    }
+}
+.certificate-provider {
+    color: #777;
+}
+
+.certificate-year {
+    margin-left: 10px;
+    font-size: 14px;
+}
